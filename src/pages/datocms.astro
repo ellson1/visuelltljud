@@ -1,0 +1,20 @@
+---
+import {datocms} from "utils/datocms"
+
+const query = `
+query MyQuery {
+  allSomethings {
+    foo
+    id
+    _modelApiKey
+  }
+}
+`
+const accessToken = import.meta.env.DATOCMS_TOKEN
+const url = Astro.url.origin + "/.netlify/functions/datocms-proxy"
+
+const content = await datocms({url, accessToken, query})
+---
+<pre>
+  {JSON.stringify(content, null, 2)}
+</pre>

@@ -1,0 +1,25 @@
+---
+import AstroComponent from "components/AstroComponent.astro"
+import {ReactComponentSSR} from "components/ReactComponentSSR"
+import {ReactComponentCSR} from "components/ReactComponentCSR"
+---
+<html>
+  <head>
+    <title>Hello, World!</title>
+  </head>
+  <body>
+    <h1>Hello, World</h1>
+    <div>
+      <div>An astro component (Always ssr)</div>
+      <AstroComponent someProp="myProp1" />
+    </div>
+    <div>
+      <div>A react component (Optional csr disabled)</div>
+      <ReactComponentSSR someProp="myProp2" />
+    </div>
+    <div>
+      <div>A react component (Optional csr enabled)</div>
+      <ReactComponentCSR someProp="myProp3" client:only />
+    </div>
+  </body>
+</html>
