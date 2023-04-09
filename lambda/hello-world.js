@@ -1,7 +1,7 @@
 exports.handler = async (event) => {
   const body = {
     status: "success",
-    message: "Hello, World!",
+    message: "Hello, Visuellt Ljud!",
   };
 
   return {
